@@ -48,10 +48,7 @@
     "cmdk": "1.0.4",
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
-<<<<<<< HEAD
     "framer-motion": "^12.23.16",
-=======
->>>>>>> d9ea4dd52e5151b7d7a3b9e7f958a04232a2b6cf
     "geist": "latest",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
@@ -78,10 +75,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8.5",
-<<<<<<< HEAD
-=======
     "supabase": "^2.40.7",
->>>>>>> d9ea4dd52e5151b7d7a3b9e7f958a04232a2b6cf
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
     "typescript": "^5"
