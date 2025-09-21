@@ -11,6 +11,10 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Droplets } from "lucide-react"
+<<<<<<< HEAD
+=======
+import { useI18n } from "@/lib/i18n/context"
+>>>>>>> d9ea4dd52e5151b7d7a3b9e7f958a04232a2b6cf
 import { LanguageSelector } from "@/components/ui/language-selector"
 
 export default function LoginPage() {
@@ -19,6 +23,10 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
+<<<<<<< HEAD
+=======
+  const { t } = useI18n()
+>>>>>>> d9ea4dd52e5151b7d7a3b9e7f958a04232a2b6cf
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -44,6 +52,7 @@ export default function LoginPage() {
   }
 
   return (
+<<<<<<< HEAD
     <div
       className="min-h-screen"
       style={{
@@ -142,6 +151,90 @@ export default function LoginPage() {
               ← होम पर जाएँ | Back to Home
             </Link>
           </div>
+=======
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-background p-6">
+      <div className="w-full max-w-md">
+        {/* Logo and Header */}
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Droplets className="h-10 w-10 text-primary" />
+            <h1 className="text-3xl font-bold text-foreground">{t("home.title")}</h1>
+          </div>
+          <p className="text-muted-foreground">{t("home.subtitle")}</p>
+          <div className="flex justify-center mt-4">
+            <LanguageSelector />
+          </div>
+        </div>
+
+        <Card className="shadow-lg">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl">{t("auth.signIn")}</CardTitle>
+            <CardDescription>Sign in to access your rainwater harvesting assessments</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="email">{t("auth.email")}</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="engineer@example.com"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="h-11"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="password">{t("auth.password")}</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="h-11"
+                />
+              </div>
+
+              {error && (
+                <div className="p-3 text-sm text-destructive-foreground bg-destructive/10 border border-destructive/20 rounded-md">
+                  {error}
+                </div>
+              )}
+
+              <Button type="submit" className="w-full h-11" disabled={isLoading}>
+                {isLoading ? (
+                  <div className="flex items-center gap-2">
+                    <LoadingSpinner size="sm" />
+                    Signing In...
+                  </div>
+                ) : (
+                  t("auth.signIn")
+                )}
+              </Button>
+            </form>
+
+            <div className="mt-6 space-y-4">
+              <div className="text-center text-sm text-muted-foreground">
+                {t("auth.dontHaveAccount")}{" "}
+                <Link
+                  href="/auth/sign-up"
+                  className="text-secondary hover:text-secondary-foreground underline underline-offset-4 font-medium"
+                >
+                  {t("auth.signUpHere")}
+                </Link>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="mt-8 text-center">
+          <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
+            ← {t("nav.home")}
+          </Link>
+>>>>>>> d9ea4dd52e5151b7d7a3b9e7f958a04232a2b6cf
         </div>
       </div>
     </div>
